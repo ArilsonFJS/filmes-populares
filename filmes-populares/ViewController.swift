@@ -40,30 +40,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        /*
-         Primeiro, obtemos a célula selecionada usando o método cellForRow(at:).
-         Se a célula não puder ser obtida, saímos do método usando return.
-         */
         guard let cell = tableView.cellForRow(at: indexPath) else {return}
         
-        /*Verificamos se a célula já está marcada (ou seja, se ela já foi selecionada anteriormente) verificando o valor da propriedade accessoryType da célula.
-         Se ela não estiver marcada, marcamos a célula adicionando um checkmark usando accessoryType = .checkmark.
-         */
         if cell.accessoryType == .none {
             cell.accessoryType = .checkmark
             
-            /*Em seguida, adicionamos o filme selecionado ao array filmeSelecionados.
-             Para fazer isso, obtemos o índice da linha selecionada usando indexPath.row e usamos esse índice para obter o item correspondente no array filmes.*/
             let linhaTabela = indexPath.row
             filmeSelecionado.append(filmes[linhaTabela])
             
         } else {
-            /*Se a célula já estiver marcada, removemos a marcação (checkmark) usando accessoryType = .none.*/
             cell.accessoryType = .none
-            
-            /*Em seguida, removemos o filme selecionado do array filmeSelecionado.
-             Para fazer isso, obtemos o filme correspondente no array filmes e usamos firstIndex(of:) para obter o índice do item no array filmeSelecionado.
-             Em seguida, removemos o item do array filmeSelecionado usando remove(at:).*/
             let filme = filmes[indexPath.row]
             
             if let posicao = filmeSelecionado.firstIndex(of: filme) {
