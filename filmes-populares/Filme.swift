@@ -7,20 +7,31 @@
 
 import UIKit
 
-class Filme {
+class Filme: Equatable {
     
-    let titulo: String
-    let sinopse: String
-    let dataLancamento: String
-    let urlImagem: String
-    let classficacaoUsuarios: Double
+    let id: Int
+    let title: String
+    let overview: String
+    let release_date:String
+    let poster_path: String
+    let vote_average: Double
     
-    init(titulo: String, sinopse: String, dataLancamento: String, urlImagem: String, classficacaoUsuarios: Double) {
+    init(id: Int,title: String, overview: String, release_date: String, poster_path: String, vote_average: Double) {
+        self.id = id
+        self.title = title
+        self.overview = overview
+        self.release_date = release_date
+        self.poster_path = poster_path
+        self.vote_average = vote_average
+    }
+    
+    static func == (lhs: Filme, rhs: Filme) -> Bool {
         
-        self.titulo = titulo
-        self.sinopse = sinopse
-        self.dataLancamento = dataLancamento
-        self.urlImagem = urlImagem
-        self.classficacaoUsuarios = classficacaoUsuarios
+        return lhs.id == rhs.id &&
+        lhs.title == rhs.title &&
+        lhs.overview == rhs.overview &&
+        lhs.release_date == rhs.release_date &&
+        lhs.poster_path == rhs.poster_path &&
+        lhs.vote_average == rhs.vote_average
     }
 }
