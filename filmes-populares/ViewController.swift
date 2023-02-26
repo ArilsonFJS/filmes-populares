@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  filmes-populares
-//
+// contato@7daysofcode.io 
 //  Created by Arilson Silva on 26/02/23.
 //
 
@@ -21,9 +21,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         filmesTableView.dataSource = self
+        filmesTableView.delegate = self
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
