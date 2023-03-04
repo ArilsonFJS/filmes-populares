@@ -7,33 +7,30 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
 
-    @IBOutlet weak var filmesTableView: UITableView!
-    
-    var filmeSelecionado: [Filme] = []
-    
-    let filmes: [Filme] = [
-        Filme(id:1,title: "Os Vingadores Ultimato", overview: "", release_date: "", poster_path: "", vote_average: 9.0),
-        Filme(id:2,title: "John Wick", overview: "", release_date: "", poster_path: "", vote_average: 8.0),
-        Filme(id:3,title: "Titanic", overview: "", release_date: "", poster_path: "", vote_average: 7.0)
-    ]
+    private lazy var titleView : UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Filmes Populares"
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 24.0, weight: .bold)
+        
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filmesTableView.dataSource = self
-        filmesTableView.delegate = self
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filmes.count
+    /*func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //return filmes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        let filme = filmes[indexPath.row]
-        cell.textLabel?.text = filme.title
+       
         
         return cell
     }
@@ -56,6 +53,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 filmeSelecionado.remove(at: posicao)
             }
         }
-    }
+    }*/
 }
 
