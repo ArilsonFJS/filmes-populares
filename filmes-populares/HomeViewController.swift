@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(FilmeTableViewCell.self, forCellReuseIdentifier: "filmeCell")
         tableView.backgroundColor = .clear
         tableView.separatorColor = .none
         
@@ -65,12 +66,12 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = filmes[indexPath.row].title
-        cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .white
-        
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "filmeCell") as? FilmeTableViewCell {
+            cell.selectionStyle = .none
+            cell.configureCell(filme: filmes[indexPath.row])
+                return cell
+            }
+       return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,6 +81,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let cell = tableView.cellForRow(at: indexPath) else {return}
+        var filmeSelecionado : [Filme] = []
         
         if cell.accessoryType == .none {
             cell.accessoryType = .checkmark

@@ -16,6 +16,9 @@
 		B45AA85A29AC00FF0074BEDA /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45AA85929AC00FF0074BEDA /* Filme.swift */; };
 		B4A55E9329B41CC500340C66 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A55E9229B41CC500340C66 /* UIView.swift */; };
 		B4A55E9529B41D7800340C66 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A55E9429B41D7800340C66 /* UIColor.swift */; };
+		B4A55E9829B435D600340C66 /* FilmeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A55E9729B435D600340C66 /* FilmeTableViewCell.swift */; };
+		B4A55E9C29B439CB00340C66 /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A55E9B29B439CB00340C66 /* FormatDate.swift */; };
+		B4A55E9E29B43B0B00340C66 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A55E9D29B43B0B00340C66 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		B45AA85929AC00FF0074BEDA /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 		B4A55E9229B41CC500340C66 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		B4A55E9429B41D7800340C66 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		B4A55E9729B435D600340C66 /* FilmeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeTableViewCell.swift; sourceTree = "<group>"; };
+		B4A55E9B29B439CB00340C66 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
+		B4A55E9D29B43B0B00340C66 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		B45AA84429ABFE340074BEDA /* filmes-populares */ = {
 			isa = PBXGroup;
 			children = (
+				B4A55E9629B4358E00340C66 /* View */,
 				B4A55E8F29B41C8800340C66 /* Extensoes */,
 				B45AA85B29AC20330074BEDA /* Model */,
 				B45AA84529ABFE340074BEDA /* AppDelegate.swift */,
@@ -88,8 +95,18 @@
 			children = (
 				B4A55E9229B41CC500340C66 /* UIView.swift */,
 				B4A55E9429B41D7800340C66 /* UIColor.swift */,
+				B4A55E9B29B439CB00340C66 /* FormatDate.swift */,
+				B4A55E9D29B43B0B00340C66 /* UIImageView.swift */,
 			);
 			path = Extensoes;
+			sourceTree = "<group>";
+		};
+		B4A55E9629B4358E00340C66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4A55E9729B435D600340C66 /* FilmeTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A55E9829B435D600340C66 /* FilmeTableViewCell.swift in Sources */,
+				B4A55E9E29B43B0B00340C66 /* UIImageView.swift in Sources */,
 				B4A55E9329B41CC500340C66 /* UIView.swift in Sources */,
+				B4A55E9C29B439CB00340C66 /* FormatDate.swift in Sources */,
 				B4A55E9529B41D7800340C66 /* UIColor.swift in Sources */,
 				B45AA84A29ABFE340074BEDA /* HomeViewController.swift in Sources */,
 				B45AA84629ABFE340074BEDA /* AppDelegate.swift in Sources */,
