@@ -7,8 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class HomeViewController: UIViewController {
+    
+    let filmes: [Filme] = [
+            Filme(id:1,title: "Os Vingadores Ultimato", overview: "", release_date: "", poster_path: "", vote_average: 9.0),
+            Filme(id:2,title: "John Wick", overview: "", release_date: "", poster_path: "", vote_average: 8.0),
+            Filme(id:3,title: "Titanic", overview: "", release_date: "", poster_path: "", vote_average: 7.0)
+        ]
+    
     private lazy var titleView : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,17 +41,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-       
-        
-        return cell
-    }
-    
     /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let cell = tableView.cellForRow(at: indexPath) else {return}
@@ -65,5 +60,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }*/
+}
+
+
+
+extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filmes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = filmes[indexPath.row].title
+        cell.backgroundColor = .clear
+        cell.textLabel?.textColor = .white
+        
+        return cell
+    }
+    
+    
 }
 
