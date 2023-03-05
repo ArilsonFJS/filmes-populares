@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Filmes Populares"
-        //label.textColor = .white
+        label.textColor = .white
         label.font = .systemFont(ofSize: 24.0, weight: .bold)
         
         return label
@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.setBackground()
         setLayout()
         
     }
@@ -65,10 +66,9 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let filme = filmes[indexPath.row]
-        cell.textLabel?.text = filme.title
+        cell.textLabel?.text = filmes[indexPath.row].title
         cell.backgroundColor = .clear
-        //cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = .white
         
         return cell
     }
